@@ -1,0 +1,5 @@
+- Uniform variables
+- Input handling
+- Custom, higher precision floating point type
+- Add geometry shader to default
+- 3D canvas
