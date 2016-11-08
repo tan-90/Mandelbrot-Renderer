@@ -8,3 +8,9 @@ To use it for other purposes, just create a canvas and a fragment shader with th
 The current Mandelbrot implementation is a rushed test, take a look at the TODO list.
 
 Feel free to cooperate.
+
+# Useful links
+
+Mandelbrot Set: https://goo.gl/JIVgRu
+GLSL: https://goo.gl/APzFzz
+Fragment Shader: https://goo.gl/BERY9l
