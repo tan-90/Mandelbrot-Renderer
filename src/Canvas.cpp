@@ -11,6 +11,11 @@ Canvas::Canvas(uint Width, uint Height, std::string Title)
 	glewInit() != GLEW_OK;
 	// TODO: handle glew initialization failure
 
+	glfwSetKeyCallback(m_Handle, KeyCallback);
+	glfwSetMouseButtonCallback(m_Handle, ButtonCallback);
+	glfwSetCursorPosCallback(m_Handle, CursorCallback);
+	glfwSetScrollCallback(m_Handle, ScrollCallback);
+
 	glViewport(0, 0, Width, Height);
 
 	// Only one canvas should be active at a time, with only one shader

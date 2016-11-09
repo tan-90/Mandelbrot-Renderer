@@ -13,12 +13,17 @@ int main()
 
 	glEnable(GL_DEPTH_TEST);
 
+
+	// Initialize the input handler
+	Input::GetInstance().Init();
+
 	// Create a canvas that uses the Mandelbrot fragment shader
 	GraphCanvas* Sandbox = new GraphCanvas(800, 600, "Mandelbrot", {-0.5f, 1.0f, -0.5f, 1.0f});
 
 	while (!Sandbox->ShouldClose())
 	{
 		Sandbox->Update();
+		std::cout << Input::GetInstance().GetScroll().y << std::endl;
 	}
 
 	glfwTerminate();	

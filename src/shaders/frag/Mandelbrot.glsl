@@ -20,17 +20,17 @@ uniform GraphRange uGraphRange;
 uniform GraphSize  uGraphSize ;
 
 float Scale = 2;
-int MaxIter  = 1500;
+int MaxIter  = 2000;
 float CX = 0.35;
 float CY = 0.35;
 
 void main()
 {
-	float X;
-	float Y;
+	highp float X;
+	highp float Y;
 
-	float X0;
-	float Y0;
+	highp float X0;
+	highp float Y0;
 
 	int Iter;
 

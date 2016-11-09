@@ -2,6 +2,7 @@
 
 #include "Common.h"
 #include "Shader.h"
+#include "Input.h"
 
 #include <string>
 

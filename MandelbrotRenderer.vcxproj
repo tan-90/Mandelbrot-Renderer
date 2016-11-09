@@ -126,6 +126,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\GraphCanvas.cpp" />
+    <ClCompile Include="src\Input.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Canvas.cpp" />
@@ -135,6 +136,7 @@
     <ClInclude Include="src\GraphCanvas.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Canvas.h" />
+    <ClInclude Include="src\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\shaders\frag\Mandelbrot.glsl" />

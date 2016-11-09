@@ -19,7 +19,7 @@ class GraphCanvas : public Canvas
 public:
 	GraphCanvas(uint Width, uint Height, std::string Name, GraphRange InitialRange);
 
-	inline void SetCanvasRange(GraphRange CanvasRange) { m_CanvasRange = CanvasRange; }
+	inline void SetCanvasRange(GraphRange CanvasRange) { m_CanvasRange = CanvasRange; LoadUniforms(); }
 
 protected:
 	virtual void LoadUniforms() override;
