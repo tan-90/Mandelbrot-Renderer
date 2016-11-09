@@ -1,12 +1,28 @@
-#version 330 core
+#version 400 core
 
 out vec4 Color;
 
 in vec3 FragPosition;
 
+struct GraphRange
+{
+	float MinX;
+	float MinY;
+};
+
+struct GraphSize
+{
+	float x;
+	float y;
+};
+
+uniform GraphRange uGraphRange;
+uniform GraphSize  uGraphSize ;
+
 float Scale = 2;
-int MaxIter  = 10000;
-float C = 0.25;
+int MaxIter  = 1500;
+float CX = 0.35;
+float CY = 0.35;
 
 void main()
 {
@@ -18,11 +34,8 @@ void main()
 
 	int Iter;
 
-	X = FragPosition.x - 0.5;
-	Y = FragPosition.y;
-
-	X /= 0.75;
-	Y /= 0.75;
+	X = uGraphRange.MinX + FragPosition.x * uGraphSize.x;
+	Y = uGraphRange.MinY + FragPosition.y * uGraphSize.y;
 
 	X0 = X;
 	Y0 = Y;
@@ -33,8 +46,8 @@ void main()
 	{
 		Iter++;
 
-		float XTemp = X * X - Y * Y + X0;
-		Y = 2 * X * Y + Y0;
+		float XTemp = X * X - Y * Y + CX;
+		Y = 2 * X * Y + CY;
 		X = XTemp;
 	}
 	

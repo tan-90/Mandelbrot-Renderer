@@ -24,6 +24,8 @@ public:
 
 	void Enable();
 	static void Disable();
+
+	inline GLuint GetHandle() const { return m_Handle; }
 private:
 	static ShaderSource FromFile(std::string VertexPath, std::string FragPath);
 	static bool Compile(GLuint* Handle, ShaderSource Source);

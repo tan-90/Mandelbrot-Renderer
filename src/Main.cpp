@@ -1,5 +1,5 @@
 #include "Common.h"
-#include "Canvas.h"
+#include "GraphCanvas.h"
 
 int main()
 {
@@ -14,7 +14,7 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 
 	// Create a canvas that uses the Mandelbrot fragment shader
-	Canvas* Sandbox = new Canvas(800, 600, "Mandelbrot");
+	GraphCanvas* Sandbox = new GraphCanvas(800, 600, "Mandelbrot", {-0.5f, 1.0f, -0.5f, 1.0f});
 
 	while (!Sandbox->ShouldClose())
 	{

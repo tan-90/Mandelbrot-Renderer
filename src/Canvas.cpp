@@ -57,6 +57,7 @@ bool Canvas::ShouldClose() const
 
 void Canvas::Render()
 {
+	glClear(GL_DEPTH_BUFFER_BIT);
 	glDrawElements(GL_TRIANGLES, m_VertexCount, GL_UNSIGNED_INT, 0);
 }
 
@@ -106,4 +107,19 @@ void Canvas::SetupCanvas()
 	glBindVertexArray(NULL);
 
 	m_VertexCount = 6;
+}
+
+void Canvas::LoadUniforms()
+{
+	// NOOP
+}
+
+GLint Canvas::GetUniformLocation(std::string Location)
+{
+	return glGetUniformLocation(m_Shader->GetHandle(), (GLchar*)Location.c_str());
+}
+
+void Canvas::LoadUniformFloat(std::string Location, GLfloat Uniform)
+{
+	glUniform1f(GetUniformLocation(Location), Uniform);
 }
