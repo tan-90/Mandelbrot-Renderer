@@ -1,16 +1,12 @@
 # MandelbrotRenderer
-Real time interactive Mandelbrot set renderer.
 
-I also found this to be really useful to manipulate images in a per-pixel scale.
+## About
+I wanted to show how quickly you can get a simple program paralelized over all pixels of a canvas by using OpenGL fragment shaders. My (obvious) choice was to render fractals, so this realtime interactive [Mandelbrot Set](https://goo.gl/JIVgRu) renderer was born. It's written in C++ and makes it very easy to write and use your own fragment shader (that here works as a way to define a program you want to run for every pixel).
 
-To use it for other purposes, just create a canvas and a fragment shader with the same name.
+![Mandelbrot Renderer](https://i.imgur.com/DFlpDSE.jpg)
 
-The current Mandelbrot implementation is a rushed test, take a look at the TODO list.
+## Notes
+This is meant to be a proof of concept, so there are no custom floating points for the extra precision that would be needed or a really good input system. Maybe it will become a fully featured project one day.
 
-Feel free to cooperate.
-
-# Useful links
-
-Mandelbrot Set: https://goo.gl/JIVgRu
-GLSL: https://goo.gl/APzFzz
-Fragment Shader: https://goo.gl/BERY9l
+## Running
+The dependencies are part of the repository and this doesn't use any external resources, so you should be able to just build and run it with Visual Studio.
