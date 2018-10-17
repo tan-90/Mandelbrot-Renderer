@@ -9,8 +9,6 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-
 	glEnable(GL_DEPTH_TEST);
 
 
@@ -18,12 +16,11 @@ int main()
 	Input::GetInstance().Init();
 
 	// Create a canvas that uses the Mandelbrot fragment shader
-	GraphCanvas* Sandbox = new GraphCanvas(800, 600, "Mandelbrot", {-0.5f, 1.0f, -0.5f, 1.0f});
+	GraphCanvas* Sandbox = new GraphCanvas(800, 600, "Mandelbrot", { -1.0f, 1.5f, -1.0f, 1.5f }, { 0.0005f, 0.25f });
 
 	while (!Sandbox->ShouldClose())
 	{
 		Sandbox->Update();
-		std::cout << Input::GetInstance().GetScroll().y << std::endl;
 	}
 
 	glfwTerminate();	

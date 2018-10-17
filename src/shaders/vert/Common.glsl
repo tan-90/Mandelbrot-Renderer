@@ -2,7 +2,7 @@
 
 layout (location = 0) in vec3 Position;
 
-out vec3 FragPosition;
+out highp vec3 FragPosition;
 
 void main()
 {

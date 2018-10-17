@@ -12,6 +12,7 @@
   */
 class Canvas
 {
+	friend void ResizeCallback(GLFWwindow* Window, int Width, int Height);
 public:
 	Canvas(uint Width, uint Height, std::string Name);
 	~Canvas();
@@ -49,6 +50,8 @@ protected:
 	void LoadUniformFloat(std::string Location, GLfloat Uniform);
 
 	std::string m_Title ;
+	uint m_Width;
+	uint m_Height;
 
 	GLFWwindow* m_Handle;
 	Shader*     m_Shader;

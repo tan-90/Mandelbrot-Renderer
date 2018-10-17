@@ -3,6 +3,8 @@
 Canvas::Canvas(uint Width, uint Height, std::string Title)
 {
 	m_Title = Title;
+	m_Height = Height;
+	m_Width = Width;
 	m_Handle = glfwCreateWindow(Width, Height, Title.c_str(), NULL, NULL);	
 	// TODO: handle window creation failure
 
@@ -16,7 +18,11 @@ Canvas::Canvas(uint Width, uint Height, std::string Title)
 	glfwSetCursorPosCallback(m_Handle, CursorCallback);
 	glfwSetScrollCallback(m_Handle, ScrollCallback);
 
-	glViewport(0, 0, Width, Height);
+	glfwSetWindowSizeCallback(m_Handle, ResizeCallback);
+
+	glfwSetWindowUserPointer(m_Handle, this);
+
+	glViewport(0, 0, m_Width, m_Height);
 
 	// Only one canvas should be active at a time, with only one shader
 	// Shader, buffer and context binding and unbinding is expensive and should be avoided in this case
@@ -127,4 +133,14 @@ GLint Canvas::GetUniformLocation(std::string Location)
 void Canvas::LoadUniformFloat(std::string Location, GLfloat Uniform)
 {
 	glUniform1f(GetUniformLocation(Location), Uniform);
+}
+
+void ResizeCallback(GLFWwindow* Window, int Width, int Height)
+{
+	Canvas* Instance = (Canvas*)glfwGetWindowUserPointer(Window);
+
+	Instance->m_Width = (uint)Width;
+	Instance->m_Height = (uint)Height;
+
+	glViewport(0, 0, Width, Height);
 }

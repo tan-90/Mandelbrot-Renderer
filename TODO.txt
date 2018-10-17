@@ -1,5 +1,9 @@
-- Uniform variables
-- Input handling
+- Keep canvas aspect ratio
+- Change navigation sensitivity based on zoom
+- Change zoom pivot to cursor
+- Smooth coloring functions
+- Handle mouse drag
+- Add includes to shader parser
 - Custom, higher precision floating point type
 - Add geometry shader to default
 - 3D canvas

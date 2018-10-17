@@ -24,9 +24,12 @@ public:
 
 	inline const glm::vec2& GetCursor() { return m_Cursor; }
 	inline const glm::vec2& GetScroll() { return m_Scroll; }
+
 	// TODO: sanitize array indexing.
 	inline bool GetKeyDown(uint Key) { return m_Keys[Key]; }
 	inline bool GetButtonDown(uint Button) { return m_Buttons[Button]; }
+
+	void ClearScrollOffset();
 
 private:
 	static Input s_Instance;

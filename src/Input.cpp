@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Input.h"
 
 Input Input::s_Instance;
@@ -12,6 +13,12 @@ void Input::UnpressAll()
 {
 	memset(m_Keys, 0, sizeof(m_Keys));
 	memset(m_Buttons, 0, sizeof(m_Buttons));
+}
+
+void Input::ClearScrollOffset()
+{
+	m_Scroll.x = 0;
+	m_Scroll.y = 0;
 }
 
 void KeyCallback(GLFWwindow* Window, int Key, int ScanCode, int Action, int Mods)
